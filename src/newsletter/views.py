@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import SignUpForm
+from .forms import SignUpForm, ContactForm
 
 # Create your views here.
 def home(request):
@@ -28,3 +28,20 @@ def home(request):
             "title": "Thank you!!!"
         }
     return render(request, "home.html", context)
+
+
+def contact(request):
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        for key in form.cleaned_data.iteritems():
+            print key
+            #print form.cleaned_data.get(key)
+        email = form.cleaned_data.get("email")
+        message = form.cleaned_data.get("message")
+        full_name = form.cleaned_data.get("full_name")
+        print form
+    context = {
+        'form': form,
+    }
+
+    return render(request, "forms.html", context)
