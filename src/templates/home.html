@@ -7,22 +7,40 @@
  {% block jumbotron %}
 
   <div class="jumbotron">
-    <h1>Navbar example</h1>
-    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
-    <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+    <div class="row" >
+        <div class="col-sm-6">
+        <h1>Try Django 1.8</h1>
+        <p class="lead">The MVP Landing project is designed to get your project started. The goal is to help you launch as soon as possible with the least amount of investment using tim or money. Join Us Today.</p>
+        <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
   </div>
+             <div class="col-sm-6" style="background-color:black;height:300px;">
+
+     </div>
+  </div>
+
+      </div>
  {% endblock %}
 
 {% block content %}
 <div class="row">
-    <div class="col-sm-6 col-md-3">.col-md-1
+    <div class="col-xs-3 pull-right">
         <h1>{{ title }}</h1>
-        {{ user }}
-        {{ request.user }}
         <form method='POST' action=''> {% csrf_token %}
         {{ form|crispy }}
         <input class='btn btn-primary' type='submit' value="Sign Up" />
         </form>
     </div>
+        <div class="col-sm-3">
+        <p class="lead">Built with django &amp; Bootstrap</p>
+        </div>
+
+        <div class="col-sm-3">
+        <p class="lead">Created for starters of all kinds. </p>
+        </div>
+
+        <div class="col-sm-3">
+        <p class="lead">Always open source</p>
+        </div>
+
 </div>
 {% endblock %}
