@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(max_length=254)),
                 ('full_name', models.CharField(max_length=120, null=True, blank=True)),
                 ('timestamp', models.DateTimeField(auto_now_add=True)),
-                ('update', models.DateTimeField(auto_now=True)),
+                ('updated', models.DateTimeField(auto_now=True)),
             ],
         ),
     ]

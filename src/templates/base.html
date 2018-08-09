@@ -15,6 +15,12 @@
 
     {% include 'head_css.html' %}
 
+      <style>
+      {% block style %}{% endblock %}
+      </style>
+
+
+
   </head>
 
   <body>
@@ -23,12 +29,7 @@
 
     <div class="container">
             {% block jumbotron %}
-            <!-- Main component for a primary marketing message or call to action -->
-        <div class="jumbotron">
-        {% block jumbotron_content %}
-
-        {% endblock %}
-        </div>
+          
             {% endblock %}
 
 
