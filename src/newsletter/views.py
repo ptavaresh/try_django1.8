@@ -5,7 +5,7 @@ from django.shortcuts import render
 from .forms import ContactForm, SignUpForm
 # Create your views here.
 def home(request):
-	title = 'Welcome'
+	title = 'Sign Up Now!'
 	form = SignUpForm(request.POST or None)
 	context = {
 		"title": title,
@@ -30,7 +30,10 @@ def home(request):
 			"title": "Thank you"
 		}
 
-
+	if request.user.is_authenticated() and request.user.is_staff:
+		context = {
+			"queryset": [123, 456]
+		}
 	return render(request, "home.html", context)
 
 
